@@ -40,10 +40,10 @@ app.get('/userdata', (req, res) => {
     console.log("uname", user_id)
     databank.forEach(item => {
         if (item.userid == user_id) {
-            const finded = databank.find(user => user.userid == user_id && user.types == "1");
-            return res.json({ user: finded });
+            const found = databank.filter(user => user.userid == user_id && user.types == "1");
+            return res.json({ user: found });
         }
-        console.log("finded", finded);
+        console.log("finded", found);
     });
 })
 
